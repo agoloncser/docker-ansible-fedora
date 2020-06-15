@@ -1,8 +1,8 @@
-# docker-ansible-fedora32
+# docker-ansible-fedora
 
-[![Build Status](https://travis-ci.com/agoloncser/docker-ansible-fedora32.svg?branch=master)](https://travis-ci.com/agoloncser/docker-ansible-fedora32)
+[![Build Status](https://travis-ci.com/agoloncser/docker-ansible-fedora.svg?branch=master)](https://travis-ci.com/agoloncser/docker-ansible-fedora)
 
-Docker image for testing ansible code.
+Fedora-based docker images for testing Ansible code.
 
 Includes:
 - ansible
