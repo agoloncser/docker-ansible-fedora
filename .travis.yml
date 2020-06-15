@@ -8,3 +8,7 @@ env:
   jobs:
     - IMAGE=docker-ansible-fedora32 FROM_TAG=32
     - IMAGE=docker-ansible-fedora33 FROM_TAG=33
+
+jobs:
+  allow_failures:
+    - env: IMAGE=docker-ansible-fedora33 FROM_TAG=33
