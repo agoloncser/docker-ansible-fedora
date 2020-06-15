@@ -1,0 +1,10 @@
+---
+version: ~> 1.0
+import: agoloncser/travis-shared-configs:docker-ansible-matrix.yml
+env:
+  global:
+    - VERSION=1.${TRAVIS_BUILD_NUMBER}
+    - FROM_DISTRO=fedora
+  jobs:
+    - IMAGE=docker-ansible-fedora32 FROM_TAG=32
+    - IMAGE=docker-ansible-fedora33 FROM_TAG=33
