@@ -15,21 +15,5 @@ rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
-# ansible deps
-RUN yum -y install sudo python3-pip
-RUN pip3 install ansible molecule yamllint ansible-lint
-
-# prettier.js
-RUN curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
-RUN dnf install -y yarn
-RUN yarn global add prettier --dev --exact
-
-# Sudo: Disable requiretty.
-RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
-
-# Ansible: Install Ansible inventory file.
-RUN mkdir -p /etc/ansible
-RUN echo -e '[local]\nlocalhost ansible_connection=local' > /etc/ansible/hosts
-
 VOLUME [ "/sys/fs/cgroup" ]
 CMD ["/usr/sbin/init"]
