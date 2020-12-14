@@ -1,4 +1,5 @@
-FROM ${FROM_DISTRO}:${FROM_TAG}
+ADD FROM_TAG:33
+FROM fedora:${FROM_TAG}
 MAINTAINER https://github.com/agoloncser
 ENV container docker
 
